@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Pequenas Propriedades Rurais</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cadastro de Propriedade Rural</h1>
+        <p>Preencha os campos abaixo para cadastrar sua pequena propriedade rural.</p>
+
+        <form action="#" method="POST" class="property-form">
+            <fieldset>
+                <legend>Informações Gerais da Propriedade</legend>
+
+                <div class="form-group">
+                    <label for="nomePropriedade">Nome da Propriedade:</label>
+                    <input type="text" id="nomePropriedade" name="nomePropriedade" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="tipoPropriedade">Tipo de Propriedade:</label>
+                    <select id="tipoPropriedade" name="tipoPropriedade" required>
+                        <option value="">Selecione</option>
+                        <option value="sitio">Sítio</option>
+                        <option value="chacara">Chácara</option>
+                        <option value="fazenda-pequena">Pequena Fazenda</option>
+                        <option value="terreno-rural">Terreno Rural</option>
+                        <option value="outros">Outros</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="tamanhoArea">Tamanho da Área (em hectares):</label>
+                    <input type="number" id="tamanhoArea" name="tamanhoArea" step="0.01" min="0" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="valorEstimado">Valor Estimado (R$):</label>
+                    <input type="number" id="valorEstimado" name="valorEstimado" step="0.01" min="0">
+                </div>
+
+                <div class="form-group">
+                    <label for="descricao">Descrição Detalhada:</label>
+                    <textarea id="descricao" name="descricao" rows="6" placeholder="Descreva as principais características, benfeitorias, culturas, etc."></textarea>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Localização</legend>
+
+                <div class="form-group">
+                    <label for="cep">CEP:</label>
+                    <input type="text" id="cep" name="cep" maxlength="9" placeholder="Ex: 84000-000">
+                </div>
+
+                <div class="form-group">
+                    <label for="estado">Estado:</label>
+                    <select id="estado" name="estado" required>
+                        <option value="">Selecione</option>
+                        <option value="PR">Paraná</option>
+                        <option value="SC">Santa Catarina</option>
+                        <option value="RS">Rio Grande do Sul</option>
+                        <option value="SP">São Paulo</option>
+                        </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="cidade">Cidade:</label>
+                    <input type="text" id="cidade" name="cidade" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="enderecoAproximado">Endereço Aproximado / Referência:</label>
+                    <input type="text" id="enderecoAproximado" name="enderecoAproximado" placeholder="Ex: Próximo à Fazenda Sol Nascente">
+                </div>
+
+                <div class="form-group">
+                    <label for="coordenadas">Coordenadas GPS (Opcional):</label>
+                    <input type="text" id="coordenadas" name="coordenadas" placeholder="Ex: -25.0933, -50.1633">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Características e Infraestrutura</legend>
+
+                <div class="form-group checkbox-group">
+                    <label>Recursos Hídricos:</label>
+                    <div>
+                        <input type="checkbox" id="nascente" name="recursosHidricos[]" value="nascente">
+                        <label for="nascente">Nascente</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="rio" name="recursosHidricos[]" value="rio">
+                        <label for="rio">Rio/Córrego</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="poco" name="recursosHidricos[]" value="poco">
+                        <label for="poco">Poço Artesiano/Caipira</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="lagos" name="recursosHidricos[]" value="lagos">
+                        <label for="lagos">Açudes/Lagos</label>
+                    </div>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <label>Benfeitorias Existentes:</label>
+                    <div>
+                        <input type="checkbox" id="casa" name="benfeitorias[]" value="casa">
+                        <label for="casa">Casa Sede</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="galpao" name="benfeitorias[]" value="galpao">
+                        <label for="galpao">Galpão/Barracão</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="curral" name="benfeitorias[]" value="curral">
+                        <label for="curral">Curral/Aprisco</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="energia" name="benfeitorias[]" value="energia">
+                        <label for="energia">Energia Elétrica</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="internet" name="benfeitorias[]" value="internet">
+                        <label for="internet">Acesso à Internet</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="tipoSolo">Tipo de Solo Predominante:</label>
+                    <input type="text" id="tipoSolo" name="tipoSolo" placeholder="Ex: Terra roxa, argiloso, arenoso">
+                </div>
+
+                <div class="form-group">
+                    <label for="culturas">Culturas Atuais/Potenciais:</label>
+                    <textarea id="culturas" name="culturas" rows="3" placeholder="Ex: Soja, milho, gado de leite, hortaliças, fruticultura"></textarea>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Fotos da Propriedade</legend>
+                <div class="form-group">
+                    <label for="fotosPropriedade">Selecione as fotos (mínimo 1, máximo 5):</label>
+                    <input type="file" id="fotosPropriedade" name="fotosPropriedade[]" accept="image/*" multiple>
+                    <small>Arquivos permitidos: JPG, PNG. Tamanho máximo por foto: 2MB.</small>
+                </div>
+            </fieldset>
+
+            <button type="submit">Cadastrar Propriedade</button>
+        </form>
+    </div>
+</body>
+</html>

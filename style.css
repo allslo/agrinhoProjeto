@@ -1,0 +1,287 @@
+/* Importação de fontes (Opcional, mas melhora a tipografia) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+    /* Cores principais */
+    --primary-color: #4CAF50; /* Verde vibrante */
+    --secondary-color: #8BC34A; /* Verde mais claro */
+    --accent-color: #FFC107; /* Amarelo (para destaque ou avisos) */
+    --text-color: #333; /* Texto escuro */
+    --light-text-color: #666; /* Texto secundário */
+    --background-color: #F8F8F8; /* Fundo claro geral */
+    --form-bg-color: #FFFFFF; /* Fundo do formulário */
+    --border-color: #E0E0E0; /* Cor da borda padrão */
+    --focus-border-color: #66BB6A; /* Borda ao focar */
+    --button-hover-color: #43A047; /* Hover do botão */
+}
+
+/* Estilos Globais */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinha no topo, não no centro vertical */
+    min-height: 100vh;
+}
+
+.container {
+    background-color: var(--form-bg-color);
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 900px; /* Largura máxima para o formulário */
+    width: 100%;
+    box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura */
+}
+
+h1 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 2.2em;
+    font-weight: 700;
+}
+
+p {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--light-text-color);
+    font-size: 1.1em;
+}
+
+/* Estilos do Formulário */
+.property-form {
+    display: grid;
+    gap: 25px; /* Espaço entre os fieldsets */
+}
+
+fieldset {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 20px; /* Espaço abaixo do fieldset */
+    background-color: #fdfdfd;
+}
+
+legend {
+    font-weight: 700;
+    color: var(--primary-color);
+    padding: 0 10px;
+    font-size: 1.3em;
+    border-bottom: none; /* Remove a linha padrão do legend */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-color);
+    font-size: 1em;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group select,
+.form-group textarea {
+    width: calc(100% - 20px); /* Ajuste para padding */
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1em;
+    color: var(--text-color);
+    box-sizing: border-box; /* Inclui padding e borda na largura total */
+    transition: border-color 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="number"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--focus-border-color);
+    outline: none; /* Remove o outline padrão */
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2); /* Sombra suave ao focar */
+}
+
+.form-group textarea {
+    resize: vertical; /* Permite redimensionamento vertical */
+    min-height: 80px;
+}
+
+/* Estilos para Checkboxes */
+.checkbox-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Espaço entre os itens do checkbox */
+    align-items: center;
+}
+
+.checkbox-group label {
+    margin-bottom: 0; /* Ajusta o espaçamento da label para checkboxes */
+    display: inline-block; /* Permite que a label e o input fiquem na mesma linha */
+    font-weight: 400; /* Menos negrito para labels de checkbox */
+    margin-right: 5px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 5px;
+    transform: scale(1.1); /* Aumenta um pouco o tamanho do checkbox */
+}
+
+/* Estilo para upload de arquivo */
+input[type="file"] {
+    border: 1px dashed var(--border-color);
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    width: calc(100% - 30px); /* Ajuste para padding */
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+input[type="file"]::file-selector-button {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 15px;
+}
+
+input[type="file"]::file-selector-button:hover {
+    background-color: var(--primary-color);
+}
+
+small {
+    display: block;
+    margin-top: 5px;
+    color: var(--light-text-color);
+    font-size: 0.85em;
+}
+
+/* Botão de Envio */
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 15px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+button[type="submit"]:hover {
+    background-color: var(--button-hover-color);
+    transform: translateY(-2px);
+}
+
+button[type="submit"]:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px 25px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    p {
+        font-size: 1em;
+        margin-bottom: 20px;
+    }
+
+    fieldset {
+        padding: 20px;
+    }
+
+    legend {
+        font-size: 1.1em;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="number"],
+    .form-group select,
+    .form-group textarea,
+    input[type="file"] {
+        width: calc(100% - 24px); /* Ajuste para padding em telas menores */
+    }
+
+    button[type="submit"] {
+        font-size: 1.1em;
+        padding: 12px 15px;
+    }
+
+    .checkbox-group {
+        flex-direction: column; /* Empilha checkboxes em telas pequenas */
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px 15px;
+        border-radius: 5px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 0.9em;
+        margin-bottom: 15px;
+    }
+
+    fieldset {
+        padding: 15px;
+    }
+
+    legend {
+        font-size: 1em;
+        padding: 0 5px;
+    }
+
+    .form-group label {
+        font-size: 0.9em;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="number"],
+    .form-group select,
+    .form-group textarea {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+
+    small {
+        font-size: 0.75em;
+    }
+
+    button[type="submit"] {
+        font-size: 1em;
+        padding: 10px;
+    }
+}
